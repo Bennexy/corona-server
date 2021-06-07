@@ -10,9 +10,9 @@ import server.config as config
 
 
 api = Api(version="1.4.8",
-    title="CloudIntegration - OCR Server",
-    contact="sales@fellow-consulting.de",
-    description="OCR Server APIs")
+    title="Daily-Code - Corona Server",
+    contact="benedikt.liebs@daily-code.de",
+    description="Corona Server APIs")
 
 app = Flask(__name__)
 
@@ -40,9 +40,6 @@ api.add_namespace(namespace_endpoints, path="/endpoints/")
 
 
 
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="5001", debug=True)
 
 
 

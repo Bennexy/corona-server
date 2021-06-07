@@ -32,7 +32,7 @@ def get_info_kreis(urls):
 
     for url in urls:
 
-        land = url.split("%")[-1].replace('20', '').rstrip('/')
+        land = url.split("%")[-1].replace('2', '').replace('0', '').rstrip('/')
 
         data = {}
 
@@ -60,7 +60,7 @@ def get_info_kreis(urls):
 
         data_out[land] = data
 
-    return data
+    return data_out
 
 def get_info_land(urls):
 

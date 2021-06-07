@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import requests
 from flask_restx import Namespace, Resource, fields
 from flask import jsonify, request
@@ -31,19 +32,23 @@ class MyApi(Resource):
     def post(self):
         logger.debug(f'got post request')
 
-        payload = request.form
+        payload = request.json
+
+        logger.debug(f'payload recieved: {payload}')
 
         data = payload['payload']
+        try:
+            return jsonify(message="corona server has recieved request and payload")
 
-        logger.debug(f'data = {data}')
+        finally:
 
-        url_dict = get_corona_url(data)
+            url_dict = get_corona_url(data)
 
-        payload_out = get_corona_data(url_dict)
+            logger.debug(f'data from url get: {url_dict}')
 
-        print(payload_out)
+            payload_out = get_corona_data(url_dict)
 
-        return payload_out
+            print(payload_out)
 
 
 @namespace.route("upload_to_db/")
@@ -52,7 +57,7 @@ class MyApi(Resource):
     def post(self):
         logger.debug(f'got post request')
 
-        payload = request.form
+        payload = request.json
         
         payload_in = payload['payload']
 

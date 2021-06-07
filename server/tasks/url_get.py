@@ -13,7 +13,7 @@ def get_corona_url(data):
         if orttype == 'landkreis':
             urls['landkreis'] = []
             for ort in orte:
-                urls['landkreis'].append(f'https://www.corona-in-zahlen.de/landkreise/lk%2{ort}/')
+                urls['landkreis'].append(f'https://www.corona-in-zahlen.de/landkreise/lk%20{ort}/')
         elif orttype == 'bundesland':
             urls['bundesland'] = []
             for ort in orte:

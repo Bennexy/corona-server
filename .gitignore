@@ -3,3 +3,4 @@ __pycache__/*
 *.cpython-*.pyc
 .env
 daily-code.*
+.vscode/settings.json
