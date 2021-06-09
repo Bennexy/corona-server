@@ -10,6 +10,7 @@ if ENV_FILE:
 
 
 ServerUrl = env("ServerUrl")
+CoronaServerUrl=env("CoronaServerUrl")
 
 
 

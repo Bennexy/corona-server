@@ -62,9 +62,9 @@ def get_info_kreis(urls):
 
         data['neuinfektionen'] = str(raw_data[3]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['todesfälle'] = str(raw_data[4]).translate({ord(i): None for i in '\n <b>/'})
+        data['todesfaelle'] = str(raw_data[4]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['letalitätsrate'] = str(raw_data[5]).translate({ord(i): None for i in '\n <b>/'})
+        data['letalitaetsrate'] = str(raw_data[5]).translate({ord(i): None for i in '\n <b>/'})
 
         data_out[land] = data
 
@@ -102,15 +102,15 @@ def get_info_land(urls):
 
         data['neuinfektionen'] = str(raw_data[3]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['todesfälle'] = str(raw_data[4]).translate({ord(i): None for i in '\n <b>/'})
+        data['todesfaelle'] = str(raw_data[4]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['letalitätsrate'] = str(raw_data[5]).translate({ord(i): None for i in '\n <b>/'})
+        data['letalitaetsrate'] = str(raw_data[5]).translate({ord(i): None for i in '\n <b>/'})
 
         data['erstimpfungen'] = str(raw_data[6]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['impfquote (erstimpfung)'] = str(raw_data[7]).translate({ord(i): None for i in '\n <b>/'})
+        data['impfquote-(erstimpfung)'] = str(raw_data[7]).translate({ord(i): None for i in '\n <b>/'})
 
-        data['impfquote (vollstaeding)'] = str(raw_data[8]).translate({ord(i): None for i in '\n <b>/'})
+        data['impfquote-(vollstaeding)'] = str(raw_data[8]).translate({ord(i): None for i in '\n <b>/'})
 
         data_out[land] = data
 
