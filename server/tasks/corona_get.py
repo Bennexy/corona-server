@@ -43,8 +43,16 @@ def get_info_kreis(urls):
         all_raw_data = parsed_page.find('div', class_='row row-cols-1 row-cols-md-3')
         raw_data = list(all_raw_data.find_all('b'))
 
+        if url.split('/')[-2].split('%')[0] == "sk":
+            orttype = "stadtkreis"
+        elif url.split('/')[-2].split('%')[0] == "lk":
+            orttype = "landkreis"
+        else:
+            raise UnknownType(f"landkreis type {url.split('/')[-2].split('%')[0]} not known")
         
-        data['landkreis'] = land
+        data['orttype'] = orttype
+
+        data['ortsnamen'] = land
 
         data['einwohner'] = str(raw_data[0]).translate({ord(i): None for i in '\n <b>/'})
 
@@ -82,7 +90,9 @@ def get_info_land(urls):
             for i in extracted_data.find_all('b'):
                 raw_data.append(i)
 
-        data['land'] = land
+        data['orttype'] = url.split('/')[-3]
+
+        data['ortsnamen'] = land
 
         data['einwohner'] = str(raw_data[0]).translate({ord(i): None for i in '\n <b>/'})
 
